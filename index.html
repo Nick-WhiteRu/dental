@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinica profesorului D. Scerbatiuk — Стоматология Кишинёв</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+<link rel="stylesheet" href="style.css">
+<!-- ─── NAV ─────────────────────────────────────────── -->
+<nav id="nav">
+  <div class="nav-logo">
+    <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M16 4C11 4 7 8.5 7 12.5c0 2.5 1 4.5 1 7 0 3.5 1.5 6.5 4 6.5 1.5 0 2.5-1 4-1s2.5 1 4 1c2.5 0 4-3 4-6.5 0-2.5 1-4.5 1-7C25 8.5 21 4 16 4z" fill="#C49A50" fill-opacity=".25" stroke="#C49A50" stroke-width="1.5"/>
+      <path d="M13 13c0-1.7 1.3-3 3-3s3 1.3 3 3" stroke="#3A1E0E" stroke-width="1.5" stroke-linecap="round"/>
+    </svg>
+    Clinica <em>&nbsp;profesorului&nbsp;</em> D.Scerbatiuk
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services" data-i18n="nav_services">Услуги</a></li>
+    <li><a href="#team" data-i18n="nav_team">Команда</a></li>
+    <li><a href="javascript:void(0)" onclick="openModal()" data-i18n="nav_booking">Запись</a></li>
+    <li><a href="#contacts" data-i18n="nav_contacts">Контакты</a></li>
+  </ul>
+  <div style="display:flex;align-items:center;gap:10px;">
+    <div class="lang-switch">
+      <button class="lang-btn active" onclick="setLang('ru')">RU</button>
+      <button class="lang-btn" onclick="setLang('ro')">RO</button>
+      <button class="lang-btn" onclick="setLang('en')">EN</button>
+    </div>
+    <a href="javascript:void(0)" onclick="openModal()" class="nav-cta" data-i18n="nav_cta">Записаться</a>
+  </div>
+  <div class="hamburger" id="hbg" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="#services" onclick="toggleMenu()" data-i18n="nav_services">Услуги</a>
+  <a href="#team" onclick="toggleMenu()" data-i18n="nav_team">Команда</a>
+  <a href="javascript:void(0)" onclick="openModal();toggleMenu()" data-i18n="nav_booking">Запись</a>
+  <a href="#contacts" onclick="toggleMenu()" data-i18n="nav_contacts">Контакты</a>
+</div>
+
+<!-- ─── HERO ─────────────────────────────────────────── -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-circle hero-circle-1"></div>
+  <div class="hero-circle hero-circle-2"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow" data-i18n="hero_eyebrow">Стоматологическая клиника</div>
+    <h1>Clinica<br>profesorului<br>D.Scerbatiuk</h1>
+    <p class="hero-desc" data-i18n="hero_desc">Современное оборудование, индивидуальный подход и более 25 лет опыта — всё для здоровья ваших зубов и красивой улыбки. Современное лечение, анестетики и индивидуальный подход — лечение без боли и страха.
+      
+    </p>
+    <div class="hero-actions">
+      <a href="javascript:void(0)" onclick="openModal()" class="btn-primary">
+        <span data-i18n="hero_cta">Записаться на приём</span>
+      </a>
+      <a href="#services" class="btn-outline" data-i18n="hero_services">Наши услуги</a>
+    </div>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <span class="stat-num" data-target="25">0</span>
+      <div class="stat-lbl" data-i18n="stat_years">+ лет опыта</div>
+    </div>
+    <div>
+      <span class="stat-num" data-target="98">0</span>
+      <div class="stat-lbl" data-i18n="stat_satisfied">% Довольны</div>
+    </div>
+  </div>
+</section>
+
+<hr class="gold-divider">
+<!-- ─── SERVICES ─────────────────────────────────────── -->
+<section class="section services" id="services">
+  <div class="services-hd">
+    <div>
+      <div class="section-tag rv" data-i18n="svc_tag">Наши услуги</div>
+      <h2 class="section-title rv d1" data-i18n="svc_title">Полный спектр<br><em>стоматологических</em> услуг</h2>
+    </div>
+    <p class="section-desc rv d2" data-i18n="svc_desc">Мы используем только передовые технологии и качественные материалы для достижения наилучших результатов.</p>
+  </div>
+  <div class="svc-tabs" id="svcTabs"></div>
+  <div class="svc-grid" id="svcGrid"></div>
+</section>
+
+<!-- ─── DARK STRIP ─────────────────────────────────── -->
+<div class="strip">
+  <div class="strip-inner">
+    <div class="strip-left rv">
+      <h2 data-i18n="strip_title">Почему пациенты выбирают <em>нас</em></h2>
+      <p data-i18n="strip_desc">Мы создаём атмосферу доверия и заботы. Каждый пациент для нас уникален, и мы подходим к каждому случаю с максимальной внимательностью.</p>
+    </div>
+    <div class="strip-right">
+      <div class="feat rv d1"><div class="feat-n">25+</div><div class="feat-l" data-i18n="feat1">Лет клинического опыта</div></div>
+      <div class="feat rv d2"><div class="feat-n">3 000+</div><div class="feat-l" data-i18n="feat2">Успешных случаев лечения</div></div>
+      <div class="feat rv d3"><div class="feat-n">6</div><div class="feat-l" data-i18n="feat3">Специалиста высшей категории</div></div>
+      <div class="feat rv d4"><div class="feat-n">100%</div><div class="feat-l" data-i18n="feat4">Стерильность инструментов</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TEAM ─────────────────────────────────────────── -->
+<section class="section team" id="team">
+  <div class="team-hd">
+    <div class="section-tag rv" data-i18n="team_tag">Наша команда</div>
+    <h2 class="section-title rv d1" data-i18n="team_title">Врачи, которым <em>доверяют</em></h2>
+    <p class="section-desc rv d2" data-i18n="team_desc">Опытные специалисты с многолетней практикой, постоянно совершенствующие свои навыки.</p>
+  </div>
+  <div class="team-grid">
+    <div class="team-card rv d1">
+      <div class="team-photo">
+        <div class="team-avatar">👨‍⚕️</div>
+        <span class="team-badge">Доктор мед. наук</span>
+      </div>
+      <div class="team-info">
+        <h3>Григориев Владимир</h3>
+        <p class="team-role">Доктор медицинских наук</p>
+      </div>
+    </div>
+    <div class="team-card rv d2">
+      <div class="team-photo">
+        <div class="team-avatar">👨‍⚕️</div>
+        <span class="team-badge">Стоматолог</span>
+      </div>
+      <div class="team-info">
+        <h3>Еденюк Александр</h3>
+        <p class="team-role">Стоматолог общей практики</p>
+      </div>
+    </div>
+    <div class="team-card rv d3">
+      <div class="team-photo">
+        <div class="team-avatar">👨‍⚕️</div>
+        <span class="team-badge">Стоматолог</span>
+      </div>
+      <div class="team-info">
+        <h3>Исаков Иван</h3>
+        <p class="team-role">Стоматолог общей практики</p>
+      </div>
+    </div>
+    <div class="team-card rv d4">
+      <div class="team-photo">
+        <div class="team-avatar">👨‍⚕️</div>
+        <span class="team-badge">Хирург · Имплантолог</span>
+      </div>
+      <div class="team-info">
+        <h3>Ериоменко Игорь</h3>
+        <p class="team-role">Стоматолог, хирург-имплантолог</p>
+      </div>
+    </div>
+    <div class="team-card rv d5">
+      <div class="team-photo">
+        <div class="team-avatar">👩‍⚕️</div>
+        <span class="team-badge">Терапевт · Пародонтолог</span>
+      </div>
+      <div class="team-info">
+        <h3>Скутару Лия</h3>
+        <p class="team-role">Стоматолог-терапевт, пародонтолог</p>
+      </div>
+    </div>
+    <div class="team-card rv d6">
+      <div class="team-photo">
+        <div class="team-avatar">👩‍⚕️</div>
+        <span class="team-badge">Ортодонт</span>
+      </div>
+      <div class="team-info">
+        <h3>Хангану Виктория</h3>
+        <p class="team-role">Стоматолог-ортодонт</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MODAL OVERLAY ─────────────────────────────────── -->
+<div id="appointmentModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal()">✕</button>
+
+    <div class="modal-header">
+      <div class="modal-icon">📅</div>
+      <h3 data-i18n="modal_title">Запись на приём</h3>
+      <p class="f-sub" data-i18n="modal_sub">Заполните поля ниже — мы свяжемся с вами для подтверждения</p>
+    </div>
+
+    <div id="formBody">
+      <div class="f-grid">
+        <div class="f-field">
+          <label data-i18n="form_last">Фамилия</label>
+          <input type="text" id="fLast" placeholder="Иванов" autocomplete="family-name">
+        </div>
+        <div class="f-field">
+          <label data-i18n="form_first">Имя</label>
+          <input type="text" id="fFirst" placeholder="Иван" autocomplete="given-name">
+        </div>
+        <div class="f-field f-full">
+          <label data-i18n="form_phone">Номер телефона</label>
+          <input type="tel" id="fPhone" placeholder="+373 XX XXX XXX" autocomplete="tel">
+        </div>
+        <div class="f-field f-full">
+          <label data-i18n="form_doctor">Выберите врача</label>
+          <div class="sel-wrap">
+            <select id="fDoctor">
+              <option value="">— Выберите врача —</option>
+              <option value="vvp">В В П — Хирург-стоматолог · Имплантолог</option>
+              <option value="vvg">В В Г — Ортодонт · Терапевт-стоматолог</option>
+            </select>
+          </div>
+        </div>
+        <div class="f-field f-full">
+          <label data-i18n="form_service">Услуга</label>
+          <div class="sel-wrap">
+            <select id="fService">
+              <option value="">— Выберите услугу —</option>
+              <option>Консультация врача — 200 MDL</option>
+              <option>Профессиональная чистка — 800 MDL</option>
+              <option>Лечение кариеса — от 600 MDL</option>
+              <option>Удаление зуба — от 400 MDL</option>
+              <option>Установка коронки — от 3 500 MDL</option>
+              <option>Зубные виниры — от 5 000 MDL</option>
+              <option>Имплантация — от 12 000 MDL</option>
+              <option>Отбеливание зубов — 2 500 MDL</option>
+              <option>Брекет-система — от 15 000 MDL</option>
+              <option>Протезирование — от 8 000 MDL</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-two-col">
+        <div class="cal-section">
+          <span class="f-label" data-i18n="form_date">Выберите дату</span>
+          <div class="cal-wrap">
+            <div class="cal-head">
+              <button class="cal-btn" id="calPrev">‹</button>
+              <span class="cal-month" id="calMonth"></span>
+              <button class="cal-btn" id="calNext">›</button>
+            </div>
+            <div class="cal-grid" id="calGrid"></div>
+          </div>
+        </div>
+
+        <div class="time-section">
+          <span class="f-label" data-i18n="form_time">Выберите время</span>
+          <div id="timeBox">
+            <div class="sel-wrap time-select-wrap">
+              <select id="fTime" disabled>
+                <option value="" data-i18n-time-first>↑ Сначала выберите дату</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="f-submit" onclick="submitForm()"><span data-i18n="form_submit">✓ Записаться на приём</span></button>
+    </div>
+
+    <div class="f-success" id="fSuccess">
+      <div class="succ-icon">✓</div>
+      <h3 data-i18n="succ_title">Вы записаны!</h3>
+      <p data-i18n="succ_desc">Спасибо! Мы свяжемся с вами в ближайшее время для подтверждения визита.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ─── FOOTER ───────────────────────────────────────── -->
+<footer id="contacts">
+  <div class="ft-top">
+    <div class="ft-brand">
+      <span class="ft-logo">Clinica <em>prof.</em> Scerbatiuk</span>
+      <p data-i18n="ft_desc">Современная стоматологическая клиника в Кишинёве. Ваша улыбка — наша главная цель.</p>
+      <div class="ft-soc">
+        <a href="#" class="soc-btn">f</a>
+        <a href="#" class="soc-btn">in</a>
+        <a href="#" class="soc-btn">▶</a>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4 data-i18n="ft_nav">Навигация</h4>
+      <ul>
+        <li><a href="#services" data-i18n="nav_services">Услуги</a></li>
+        <li><a href="#team" data-i18n="nav_team">Команда</a></li>
+        <li><a href="javascript:void(0)" onclick="openModal()" data-i18n="nav_cta">Записаться</a></li>
+        <li><a href="#contacts" data-i18n="nav_contacts">Контакты</a></li>
+      </ul>
+    </div>
+    <div class="ft-col">
+      <h4 data-i18n="ft_hours">Режим работы</h4>
+      <div class="hours-tbl">
+        <div class="h-row"><span class="h-day" data-i18n="h_weekdays">Пн – Пт</span><span class="h-time">08:00 – 17:00</span></div>
+        <div class="h-row"><span class="h-day" data-i18n="h_sat">Суббота</span><span class="h-time">08:00 – 13:00</span></div>
+        <div class="h-row"><span class="h-day" data-i18n="h_sun">Воскресенье</span><span class="h-closed" data-i18n="h_closed">Выходной</span></div>
+      </div>
+    </div>
+    <div class="ft-col">
+      <h4 data-i18n="ft_contacts">Контакты</h4>
+      <div class="ct-item">
+        <span class="ct-icon">📍</span>
+        <span class="ct-txt">Strada Mitropolit Petru Movilă 23/1,&nbsp;of.&nbsp;1,<br>Chișinău, Молдова</span>
+      </div>
+      <div class="ct-item">
+        <span class="ct-icon">📞</span>
+        <span class="ct-txt"><a href="tel:022235117">022 235 117</a></span><br>
+        <span class="ct-txt"><a href="tel:022235117">069 822 287</a></span>
+      </div>
+      <div class="ct-item">
+        <span class="ct-icon">✉</span>
+        <span class="ct-txt"><a href="mailto:info@profesor.com">info@profesor.com</a></span>
+      </div>
+      <div class="map-wrap">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d229.78244303017834!2d28.821343347500694!3d47.030471582555464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97dbe28204959%3A0x4a1c2c4b8985471c!2sClinica%20profesorului%20D.Scerbatiuc%20SRL!5e0!3m2!1sru!2s!4v1778217953476!5m2!1sru!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+          allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <span data-i18n="ft_copy">© 2025 Clinica profesorului Scerbatiuk. Все права защищены.</span>
+    <span>Chișinău, Moldova</span>
+  </div>
+</footer>
+
+<!-- ─── SERVICE DETAIL MODAL ──────────────────── -->
+<div id="serviceDetailModal" class="modal-overlay" onclick="handleOverlayClick(event)">
+  <div class="modal-box sd-modal-box">
+    <button class="modal-close" onclick="closeServiceDetail()">✕</button>
+    <div class="sd-header">
+      <div class="sd-icon-wrap" id="sdIcon">✨</div>
+      <div>
+        <h3 id="sdName"></h3>
+        <p class="f-sub" id="sdDesc"></p>
+      </div>
+    </div>
+    <div class="sd-price-row">
+      <span class="sd-price-label" id="sdPriceLabel">Стоимость</span>
+      <span class="sd-price-val" id="sdPrice"></span>
+    </div>
+    <div class="sd-details" id="sdDetails"></div>
+    <div class="sd-actions">
+      <button class="f-submit" id="sdBookBtn" onclick="closeServiceDetail();openModal();">Записаться на эту услугу</button>
+      <button class="sd-close-btn" id="sdCloseBtn" onclick="closeServiceDetail()">Закрыть</button>
+    </div>
+  </div>
+</div>
+
+<style>
+/* ── Category banner ── */
+.svc-cat-banner {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: linear-gradient(135deg, rgba(196,154,80,.12), rgba(196,154,80,.04));
+  border: 1px solid rgba(196,154,80,.3);
+  border-radius: 14px;
+  padding: 16px 22px;
+  margin-bottom: 8px;
+}
+.svc-cat-icon {
+  font-size: 2rem;
+  flex-shrink: 0;
+}
+.svc-cat-banner strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--gold, #C49A50);
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+.svc-cat-banner span {
+  font-size: .85rem;
+  color: var(--text-muted, #888);
+}
+
+/* ── Service card hover hint ── */
+.svc-card { cursor: pointer; }
+.svc-card:hover .svc-arr { color: var(--gold,#C49A50); transform: translateX(4px); }
+.svc-arr { transition: transform .2s, color .2s; }
+
+/* ── Service Detail Modal ── */
+.sd-modal-box {
+  max-width: 540px;
+}
+.sd-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+.sd-icon-wrap {
+  font-size: 2.4rem;
+  flex-shrink: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(196,154,80,.12);
+  border-radius: 14px;
+}
+.sd-header h3 {
+  margin: 0 0 4px;
+  font-size: 1.15rem;
+}
+.sd-price-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  padding: 10px 16px;
+  background: rgba(196,154,80,.08);
+  border-radius: 10px;
+}
+.sd-price-label {
+  font-size: .8rem;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  color: var(--text-muted,#888);
+}
+.sd-price-val {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold,#C49A50);
+}
+.sd-details {
+  font-size: .92rem;
+  line-height: 1.7;
+  color: var(--text,#333);
+  white-space: pre-line;
+  margin-bottom: 24px;
+  max-height: 42vh;
+  overflow-y: auto;
+  padding-right: 4px;
+}
+.sd-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.sd-actions .f-submit {
+  flex: 1;
+  min-width: 180px;
+}
+.sd-close-btn {
+  flex: 0 0 auto;
+  padding: 0 22px;
+  height: 48px;
+  border: 1px solid rgba(196,154,80,.4);
+  background: transparent;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: .9rem;
+  color: var(--text,#333);
+  transition: background .2s;
+}
+.sd-close-btn:hover { background: rgba(196,154,80,.08); }
+</style>
+
+<script src="script.js"></script>
+</body>
+</html>
